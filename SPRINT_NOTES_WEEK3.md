@@ -19,7 +19,6 @@
 ## Decisions made
 
 - Kept the stored and calculated margin values side by side in `product_features.csv` (`calculated_margin_percentage`, `margin_mismatch_flag`) rather than overwriting P002's stored margin — the correction from Week 1 cleaning is already reflected in `products.csv` itself.
-- Documented, rather than altered, the `inventory_master.current_stock` scale mismatch and the `branches.avg_monthly_revenue` mismatch, since both trace back to the source systems.
 - Standardised the data architecture: fact/dimension tables are canonical, denormalized views are regenerated from them for BI use.
 
 ## Closed out
