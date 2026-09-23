@@ -43,11 +43,4 @@ Full field-level reference for all 12 original files, plus the fact and dimensio
 Two integration structures came out of Week 2 — a lean fact/dimension split and a fully denormalized set of joined views. Both are kept, each with a defined role:
 
 - Fact/dimension tables (`sales_fact.csv`, `purchasing_fact.csv`, and the dimension tables) are canonical — the source of truth for KPI calculations, feature engineering, and modelling work in Phase 3.
-- Denormalized views are a BI convenience layer, regenerated from the canonical tables for dashboarding and exploratory analysis in Phase 4.
-- Flags and corrections (`scale_mismatch_flag`, `invoice_id_ambiguous`, `adjustment_sign_ambiguous_flag`) are applied at the fact/dimension level first and carried into the denormalized views on regeneration.
-
-## Known limitation carried into Phase 2
-
-`inventory_master.current_stock` remains on a different scale from its own `reorder_level`/`max_stock`/`safety_stock` fields at the source-system level. `avg_daily_qty_out` (in `product_features.csv`) is the working proxy for velocity and reorder analysis.
-
-The `ratio` column previously left in the Week 1 cleaned `inventory_master_clean.csv` has been removed and is now consistent with the Merged folder's copy.
+- Denormalized views are a BI convenience layer, regenerated from the canonical tables for dashboarding and exploratory analysis in Phase 
